@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют - Бурятзолото</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <img src="https://via.placeholder.com/50?text=BZ" alt="Логотип Бурятзолото">
+            <span>Бурятзолото</span>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">О компании</a></li>
+            <li><a href="news.html">Новости</a></li>
+            <li><a href="currency.html" class="active">Курс валют</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="video.html">Видео</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <header class="page-header">
+            <h1>Курс валют</h1>
+        </header>
+
+        <section class="currency-section">
+            <h2>Текущий курс</h2>
+            <div class="current-rate">
+                <p><strong id="currentRate">Загрузка...</strong></p>
+            </div>
+        </section>
+
+        <section class="currency-section">
+            <h2>Калькулятор валют (RUB ↔ CAD)</h2>
+            <div class="calculator">
+                <div class="calc-input-group">
+                    <label for="rubleInput">Рубли (RUB):</label>
+                    <input type="number" id="rubleInput" placeholder="Введите сумму в рублях" value="1000">
+                    <button onclick="convertToCAD()">Перевести в CAD</button>
+                </div>
+                <div class="calc-result">
+                    <p>= <strong id="cadResult">0.00</strong> CAD</p>
+                </div>
+            </div>
+
+            <div class="calculator">
+                <div class="calc-input-group">
+                    <label for="cadInput">Канадские доллары (CAD):</label>
+                    <input type="number" id="cadInput" placeholder="Введите сумму в канадских долларах" value="10">
+                    <button onclick="convertToRUB()">Перевести в RUB</button>
+                </div>
+                <div class="calc-result">
+                    <p>= <strong id="rubResult">0.00</strong> RUB</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="currency-section">
+            <h2>Динамика курса CAD/RUB за последний месяц</h2>
+            <div class="chart-container">
+                <canvas id="currencyChart"></canvas>
+            </div>
+        </section>
+
+        <button id="topBtn" class="top-button" title="Перейти наверх">↑ Наверх</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
